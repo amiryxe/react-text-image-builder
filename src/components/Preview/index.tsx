@@ -8,7 +8,7 @@ export default function Preview() {
 
   return currentBackground ? (
     <Card className="mt-8 w-fit">
-      <CardContent className="w-fit">
+      <CardContent className="w-fit max-h-[calc(100vh-8rem)] flex">
         <img src={currentBackground} />
       </CardContent>
     </Card>
