@@ -17,6 +17,15 @@ const VisuallyHiddenInput = styled('input')({
 export default function Upload() {
   const updateBackground = useStore((state: any) => state.updateBackground)
 
+  const file2Base64 = (file: File): Promise<string> => {
+    return new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = () => resolve(reader.result?.toString() || '')
+      reader.onerror = (error) => reject(error)
+    })
+  }
+
   return (
     <Button
       component="label"
@@ -28,7 +37,11 @@ export default function Upload() {
       Upload files
       <VisuallyHiddenInput
         type="file"
-        onChange={(event) => updateBackground(event.target.files)}
+        onChange={async (event) =>
+          event?.target?.files?.length
+            ? updateBackground(await file2Base64(event.target.files[0]))
+            : null
+        }
         multiple
       />
     </Button>

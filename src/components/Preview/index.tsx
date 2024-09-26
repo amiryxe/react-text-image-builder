@@ -5,13 +5,14 @@ import { useStore } from '../../store'
 
 export default function Preview() {
   const currentBackground = useStore((store: any) => store.background)
-  console.log(currentBackground)
 
-  return (
-    <Card className="mt-8">
-      <CardContent>
-        <p className="text-red-600">Card</p>
+  return currentBackground ? (
+    <Card className="mt-8 w-fit">
+      <CardContent className="w-fit">
+        <img src={currentBackground} />
       </CardContent>
     </Card>
+  ) : (
+    <h1 className="mt-6">Upload a background to start</h1>
   )
 }
