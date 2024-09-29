@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Sahel;
+  src: url('./assets/fonts/sahel/Sahel-VF.woff2');
+}
+
+body {
+  font-family: Sahel;
+  font-weight: 500;
+  font-size: 1.2rem;
+}

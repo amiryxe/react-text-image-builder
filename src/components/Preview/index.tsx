@@ -8,8 +8,10 @@ export default function Preview() {
 
   return currentBackground ? (
     <Card className="mt-8 w-fit">
-      <CardContent className="w-fit max-h-[calc(100vh-8rem)] flex">
+      <CardContent className="w-fit max-h-[calc(100vh-8rem)] flex relative justify-center items-center">
         <img src={currentBackground} />
+
+        <p className="absolute ">یک متن تستی</p>
       </CardContent>
     </Card>
   ) : (
