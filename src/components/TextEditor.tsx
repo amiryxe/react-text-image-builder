@@ -1,12 +1,14 @@
-import { useState } from 'react'
 import Editor from 'react-simple-wysiwyg'
 
+import { useStore } from '../store'
+
 export default function TextEditor() {
-  const [html, setHtml] = useState('my <b>HTML</b>')
+  const text = useStore((store: any) => store.text)
+  const updateText = useStore((store: any) => store.updateText)
 
   function onChange(e: any) {
-    setHtml(e.target.value)
+    updateText(e.target.value)
   }
 
-  return <Editor value={html} onChange={onChange} />
+  return <Editor value={text} onChange={onChange} />
 }
