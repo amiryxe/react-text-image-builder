@@ -13,6 +13,6 @@ export default function Preview() {
       </CardContent>
     </Card>
   ) : (
-    <h1 className="mt-6">Upload a background to start</h1>
+    <h1 className="mt-6 border-2 border-dashed p-8">Upload a background to start</h1>
   )
 }

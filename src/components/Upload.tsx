@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
+
 import { useStore } from '../store'
 
 const VisuallyHiddenInput = styled('input')({
@@ -34,7 +35,7 @@ export default function Upload() {
       tabIndex={-1}
       startIcon={<CloudUploadIcon />}
     >
-      Upload files
+      Upload Image
       <VisuallyHiddenInput
         type="file"
         onChange={async (event) =>

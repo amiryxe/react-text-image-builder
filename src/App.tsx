@@ -7,7 +7,7 @@ import './App.css'
 function App() {
   return (
     <div className="container mx-auto py-8">
-      <Grid container spacing={2}>
+      <Grid container spacing={5}>
         <Grid size={8}>
           <Preview />
         </Grid>
